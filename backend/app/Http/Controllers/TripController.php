@@ -14,4 +14,16 @@ class TripController extends Controller
             'destination_name' => 'required'
         ]);
     }
+    public function show(Request $request, Trip $trip)
+    {
+        if ($trip->user->id === $request->user()->id){
+            return $trip;
+
+        }
+        if ($trip->driver->id === $request->driver()->id){
+            return $trip;
+
+        }
+        
+    }
 }
