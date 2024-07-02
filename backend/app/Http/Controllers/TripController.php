@@ -24,6 +24,8 @@ class TripController extends Controller
             return $trip;
 
         }
+
+        return response () ->json(['message' => 'cannot find this trip'], 404);
         
     }
 }
