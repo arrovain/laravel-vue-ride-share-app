@@ -46,6 +46,9 @@ class TripController extends Controller
             'driver_location' => $request -> driver_location
         ]);
 
+        $trip -> load('driver.user');
+       
+
         return $trip
     }
     public function start(Request $request, Trip $trip)
