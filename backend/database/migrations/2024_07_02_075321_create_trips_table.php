@@ -19,6 +19,7 @@ return new class extends Migration
             $table->boolean('is_complete') ->default(false);
             $table->json('origin')->nullable();
             $table->json('destination')->nullable();
+            $table->string('destination_name')->nullable();
             $table->timestamps();
         });
     }
