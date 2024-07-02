@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Driver::class);
             $table->timestamps();
         });
     }
