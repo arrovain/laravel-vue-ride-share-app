@@ -20,6 +20,8 @@ class LoginController extends Controller
             return response()->json(['message' => 'Could not process with that phone number.'], 401);
         }
 
+        $user ->notify()
+
 
 
     }
