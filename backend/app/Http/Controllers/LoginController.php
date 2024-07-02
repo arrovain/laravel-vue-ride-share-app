@@ -16,6 +16,10 @@ class LoginController extends Controller
             'phone' => $request->phone
         ]);
 
+        if (!$user) {
+            return response()->json(['message' => 'Could not process with that phone number.'], 401);
+        }
+
 
 
     }
