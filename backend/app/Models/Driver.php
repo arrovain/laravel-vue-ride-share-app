@@ -15,4 +15,8 @@ class Driver extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function trips() {
+        return $this->hasMany(Trip::class);
+    }
 }
