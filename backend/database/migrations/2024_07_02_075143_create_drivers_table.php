@@ -12,8 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('drivers', function (Blueprint $table) {
+            $table->foreignIdFor(User::class);
             $table->id();
+            $table->integer('year');
+            $table->string('make');
+            $table->string('model');
+            $table->string('color');
+            $table->string('license_plate');
             $table->timestamps();
+
         });
     }
 
