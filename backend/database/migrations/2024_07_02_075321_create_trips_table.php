@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Driver::class);
+
+            $table->boolean('is_started') ->default(false);
+            $table->boolean('is_complete') ->default(false);
             $table->timestamps();
         });
     }
