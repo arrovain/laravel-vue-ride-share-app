@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Notifications\LoginNeedsVerification;
+
 
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -21,6 +23,10 @@ class LoginController extends Controller
         }
 
         $user ->notify(new LoginNeedsVerification());
+
+        return response()->json(['message' => 'Text message notification sent.']);
+    }
+
 
 
 
