@@ -14,6 +14,8 @@ class TripAccepted
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $trip;
+
     /**
      * Create a new event instance.
      */

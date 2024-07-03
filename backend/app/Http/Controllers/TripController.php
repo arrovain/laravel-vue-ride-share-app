@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\TripAccepted;
 use Illuminate\Http\Request;
 
 class TripController extends Controller
@@ -47,6 +48,8 @@ class TripController extends Controller
         ]);
 
         $trip -> load('driver.user');
+
+        TripAccepted::dispatch($trip);
        
 
         return $trip
