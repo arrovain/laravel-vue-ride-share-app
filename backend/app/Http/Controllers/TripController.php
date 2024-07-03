@@ -52,7 +52,14 @@ class TripController extends Controller
         return $trip
     }
     public function start(Request $request, Trip $trip)
-    {}
+    {
+        $trip->update({
+            'is_started' => true
+        });
+
+        $trip->load('driver.user'):
+
+    }
     public function end(Request $request, Trip $trip)
     {}
     public function location(Request $request, Trip $trip)
