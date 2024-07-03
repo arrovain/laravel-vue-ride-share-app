@@ -11,7 +11,13 @@ class Trip extends Model
 
     protected $guarded = [];
 
-    protected $casts = [];
+    protected $casts = [
+        'origin' => 'array',
+        'destination' => 'array',
+        'driver_location' => 'array,',
+        'is_started' => 'boolean',
+        'is_Complate' => 'boolean',
+    ];
 
     public function user()
     {
