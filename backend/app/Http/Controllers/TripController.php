@@ -57,11 +57,21 @@ class TripController extends Controller
             'is_started' => true
         });
 
-        $trip->load('driver.user'):
+        $trip->load('driver.user');
+
+        return $trip
 
     }
     public function end(Request $request, Trip $trip)
-    {}
+    {
+        $trip->update({
+            'is_complete' => true
+        });
+
+        $trip->load('driver.user');
+
+        return $trip
+    }
     public function location(Request $request, Trip $trip)
     {}
    
