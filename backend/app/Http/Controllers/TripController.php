@@ -73,6 +73,11 @@ class TripController extends Controller
         return $trip
     }
     public function location(Request $request, Trip $trip)
-    {}
+    {
+
+        $trip -> update ([
+            'driver_location' => $request ->driver_location 
+        ])
+    }
    
 }
